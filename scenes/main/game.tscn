@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c22jt7fw0qrj5"]
+
+[ext_resource type="PackedScene" uid="uid://p0rkkumyb0wm" path="res://scenes/player/senis2D.tscn" id="1_e64el"]
+[ext_resource type="Script" uid="uid://c7cltwc72f2xk" path="res://scripts/systems/cameraSmoothing.gd" id="2_ma5rq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e64el"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e64el"]
+specular_color = Color(1, 0, 1, 1)
+
+[node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_e64el")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1, -36)
+zoom = Vector2(5, 5)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+script = ExtResource("2_ma5rq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("WorldBoundaryShape2D_e64el")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(8.99999, 0.25)
+scale = Vector2(198, 1.5)
+texture = SubResource("CanvasTexture_e64el")
