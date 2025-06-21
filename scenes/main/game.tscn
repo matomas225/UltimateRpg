@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c22jt7fw0qrj5"]
+[gd_scene load_steps=4 format=3 uid="uid://c22jt7fw0qrj5"]
 
 [ext_resource type="PackedScene" uid="uid://p0rkkumyb0wm" path="res://scenes/player/senis2D.tscn" id="1_e64el"]
-[ext_resource type="Script" uid="uid://c7cltwc72f2xk" path="res://scripts/systems/cameraSmoothing.gd" id="2_ma5rq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e64el"]
 
@@ -18,7 +17,6 @@ zoom = Vector2(5, 5)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
-script = ExtResource("2_ma5rq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
