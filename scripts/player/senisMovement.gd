@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+# Camera Offset moving with character
+@onready var cam = $Camera2D
+@export var camera_offset_amount := 40  # How far camera shifts left/right
+var dash_camera_offset := 0.0  # Used to freeze camera during dash
+
 # Movement tuning constants
 const MOVE_SPEED = 160.0
 const JUMP_FORCE = -200.0
@@ -75,6 +80,7 @@ func _physics_process(delta: float) -> void:
 
 		# Start dash if Shift pressed, dash ready, and input direction non-zero
 		if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0 and input_dir != 0:
+			dash_camera_offset = dash_direction * camera_offset_amount
 			is_dashing = true
 			dash_timer = DASH_TIME
 			dash_direction = input_dir
@@ -88,3 +94,21 @@ func _physics_process(delta: float) -> void:
 
 	# Finally, move the character
 	move_and_slide()
+	
+	var target_offset_x = 0.0
+
+	if is_dashing:
+	# Use dash direction to determine smooth target offset, not velocity
+		target_offset_x = dash_direction * camera_offset_amount
+	else:
+		var movement_direction = sign(velocity.x)
+		if abs(velocity.x) > 10:
+				target_offset_x = movement_direction * camera_offset_amount
+		else:
+			target_offset_x = 0.0
+
+# Always smoothly interpolate to avoid snapping
+		cam.offset.x = lerp(cam.offset.x, target_offset_x, 8 * delta)
+		
+	if not is_dashing and abs(velocity.x) < 10:
+		target_offset_x = 0.0
