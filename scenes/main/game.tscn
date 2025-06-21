@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c22jt7fw0qrj5"]
+[gd_scene load_steps=5 format=3 uid="uid://c22jt7fw0qrj5"]
 
 [ext_resource type="PackedScene" uid="uid://p0rkkumyb0wm" path="res://scenes/player/senis2D.tscn" id="1_e64el"]
+[ext_resource type="AudioStream" uid="uid://cfhn3k4lfktgb" path="res://audio/music/amiant-background-audio.mp3" id="2_ma5rq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e64el"]
 
@@ -28,3 +29,7 @@ shape = SubResource("WorldBoundaryShape2D_e64el")
 position = Vector2(8.99999, 0.25)
 scale = Vector2(198, 1.5)
 texture = SubResource("CanvasTexture_e64el")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ma5rq")
+autoplay = true
