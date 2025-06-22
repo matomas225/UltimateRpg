@@ -1,19 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://c22jt7fw0qrj5"]
+[gd_scene load_steps=12 format=4 uid="uid://c22jt7fw0qrj5"]
 
 [ext_resource type="PackedScene" uid="uid://p0rkkumyb0wm" path="res://scenes/player/senis2D.tscn" id="1_e64el"]
 [ext_resource type="Texture2D" uid="uid://bufa1bk01jjp" path="res://assets/background/parallax-1/1.png" id="1_kjrfb"]
-[ext_resource type="Script" uid="uid://crn8tftkl0va8" path="res://scenes/main/cloud_layer.gd" id="1_se30j"]
+[ext_resource type="Script" path="res://scenes/main/cloud_layer.gd" id="1_se30j"]
 [ext_resource type="AudioStream" uid="uid://cfhn3k4lfktgb" path="res://audio/music/amiant-background-audio.mp3" id="2_ma5rq"]
 [ext_resource type="Texture2D" uid="uid://du77ehaxqgxli" path="res://assets/background/parallax-1/2.png" id="2_se30j"]
 [ext_resource type="Texture2D" uid="uid://b3a84jkivkdl" path="res://assets/tile-map-1.png" id="3_e3dby"]
 [ext_resource type="Texture2D" uid="uid://davq6sjfcdnk7" path="res://assets/background/parallax-1/3.png" id="3_ktwa8"]
 [ext_resource type="Texture2D" uid="uid://c4wyisp21uc8p" path="res://assets/background/parallax-1/4.png" id="4_157ky"]
 [ext_resource type="Texture2D" uid="uid://dnrx4occk6bqr" path="res://assets/background/parallax-1/5.png" id="5_y58yt"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e64el"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_e64el"]
-specular_color = Color(1, 0, 1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gsayk"]
 texture = ExtResource("3_e3dby")

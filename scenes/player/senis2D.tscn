@@ -1,7 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://p0rkkumyb0wm"]
+[gd_scene load_steps=16 format=3 uid="uid://p0rkkumyb0wm"]
 
 [ext_resource type="Script" uid="uid://dusyqyxu50esw" path="res://scripts/player/senisMovement.gd" id="1_dtv6y"]
 [ext_resource type="Texture2D" uid="uid://cdbbnd2p70278" path="res://sprites/player/player-senis.png" id="1_pofe2"]
+[ext_resource type="AudioStream" uid="uid://dmxlww0ey2l6a" path="res://audio/sfx/walking-on-grass.mp3" id="3_3pi2x"]
+[ext_resource type="Script" uid="uid://blcdotmjemi3a" path="res://scripts/player/arm_pivot.gd" id="3_t3vor"]
+[ext_resource type="AudioStream" uid="uid://lotqjq0j1v8g" path="res://audio/sfx/land-on-grass2.mp3" id="4_hgckd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7q42"]
 atlas = ExtResource("1_pofe2")
@@ -80,6 +83,24 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.850361
 
+[node name="ArmPivot" type="Node2D" parent="."]
+position = Vector2(-3, -17)
+script = ExtResource("3_t3vor")
+
+[node name="ArmLeft" type="Sprite2D" parent="ArmPivot"]
+
+[node name="ArmRight" type="Sprite2D" parent="ArmPivot"]
+
+[node name="Weapon" type="Sprite2D" parent="ArmPivot"]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_dtv6y")
+
+[node name="WalkingOnGrass" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3pi2x")
+
+[node name="LandingOnGrass" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hgckd")
+volume_db = -9.533
+pitch_scale = 0.69
