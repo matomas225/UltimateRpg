@@ -99,8 +99,9 @@ shape = SubResource("CircleShape2D_dtv6y")
 
 [node name="WalkingOnGrass" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_3pi2x")
+volume_db = -8.0
+pitch_scale = 2.0
 
 [node name="LandingOnGrass" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_hgckd")
-volume_db = -9.533
-pitch_scale = 0.69
+volume_db = -12.0
