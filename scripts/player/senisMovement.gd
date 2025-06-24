@@ -5,11 +5,11 @@ extends CharacterBody2D
 
 @onready var walking_on_grass: AudioStreamPlayer2D = $WalkingOnGrass
 @onready var landing_on_grass: AudioStreamPlayer2D = $LandingOnGrass
+@onready var dash: AudioStreamPlayer2D = $Dash
 
 var was_walking = false
 var was_on_floor = false
 var has_landed_once = false
-
 const MOVE_SPEED = 160.0
 const JUMP_FORCE = -200.0
 const GRAVITY = 1000.0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://p0rkkumyb0wm"]
+[gd_scene load_steps=17 format=3 uid="uid://p0rkkumyb0wm"]
 
 [ext_resource type="Script" uid="uid://dusyqyxu50esw" path="res://scripts/player/senisMovement.gd" id="1_dtv6y"]
 [ext_resource type="Texture2D" uid="uid://cdbbnd2p70278" path="res://sprites/player/player-senis.png" id="1_pofe2"]
 [ext_resource type="AudioStream" uid="uid://dmxlww0ey2l6a" path="res://audio/sfx/walking-on-grass.mp3" id="3_3pi2x"]
 [ext_resource type="Script" uid="uid://blcdotmjemi3a" path="res://scripts/player/arm_pivot.gd" id="3_t3vor"]
 [ext_resource type="AudioStream" uid="uid://lotqjq0j1v8g" path="res://audio/sfx/land-on-grass2.mp3" id="4_hgckd"]
+[ext_resource type="AudioStream" uid="uid://k85tgt2vslmf" path="res://audio/sfx/dash2.mp3" id="6_pj60r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7q42"]
 atlas = ExtResource("1_pofe2")
@@ -105,3 +106,7 @@ pitch_scale = 2.0
 [node name="LandingOnGrass" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_hgckd")
 volume_db = -12.0
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_pj60r")
+volume_db = 0.133
